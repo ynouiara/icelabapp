@@ -7,3 +7,12 @@ resource "aws_vpc" "myvpc" {
     Name = "icelab"
   }
 }
+
+resource "aws_subnet" "mysubnet" {
+  vpc_id     = "${aws_vpc.myvpc.id}"
+  cidr_block = "172.23.1.0/24"
+
+  tags = {
+    Name = "icelab"
+  }
+}
